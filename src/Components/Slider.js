@@ -15,8 +15,11 @@ import C_Mountain from "../Images/C_Mountain.jpg";
 import C_Ocean from "../Images/C_Ocean.jpg";
 import C_Oldcity from "../Images/C_Oldcity.jpg";
 import C_Road from "../Images/C_Road.jpg";
+import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const MySwiper = () => {
+  const navigate = useNavigate();
   const slideStyle = {
     width: '120px',
     height: '240px',
@@ -100,45 +103,86 @@ const imageStyle={
             spaceBetween: 40,
           },
         }}
-      ><SwiperSlide style={slideStyle}><img src={C_Road} style={{...imageStyle}}/>
+      ><SwiperSlide style={slideStyle}><img src={C_Road} style={{...imageStyle}} onClick={()=>navigate('/roadTravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-      Road travel
+      <Link to={"/roadTravel"} 
+      style={{
+        textDecoration:"none",
+        color:"white"
+      }}>
+      Road travel</Link>
       </div></SwiperSlide>
-      <SwiperSlide style={slideStyle}><img src={C_Ocean} style={{...imageStyle}}/>
+      <SwiperSlide style={slideStyle}><img src={C_Ocean} style={{...imageStyle}} onClick={()=>navigate('/roadTravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-      Ocean travel
+      <Link to={"/oceanTravel"} 
+      style={{
+        textDecoration:"none",
+        color:"white"
+      }}>Ocean travel</Link>
       </div></SwiperSlide>
-      <SwiperSlide style={slideStyle}><img src={C_Mountain} style={{...imageStyle}}/>
+      <SwiperSlide style={slideStyle}><img src={C_Mountain} style={{...imageStyle}} onClick={()=>navigate('/oceanTravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-      Mountain travel
+      <Link to={"/mountaintravel"} 
+      style={{
+        textDecoration:"none",
+        color:"white"
+      }}>Mountain travel</Link>
       </div></SwiperSlide>
-      <SwiperSlide style={slideStyle}><img src={C_Jungle} style={{...imageStyle}}/>
+      <SwiperSlide style={slideStyle}><img src={C_Jungle} style={{...imageStyle}} onClick={()=>navigate('/jungleTravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-      Jungle travel
+      <Link to={"/jungleTravel"} 
+      style={{
+        textDecoration:"none",
+        color:"white"
+      }}>Jungle travel</Link>
       </div></SwiperSlide>
-      <SwiperSlide style={slideStyle}><img src={C_Oldcity} style={{...imageStyle}}/>
+      <SwiperSlide style={slideStyle}><img src={C_Oldcity} style={{...imageStyle}} onClick={()=>navigate('/oldCityTravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-      Old City travel
+      <Link to={"/oldCityTravel"} 
+      style={{
+        textDecoration:"none",
+        color:"white"
+      }}>Old City travel</Link>
       </div></SwiperSlide>
-      <SwiperSlide style={slideStyle}><img src={C_Historical} style={{...imageStyle}}/>
+      <SwiperSlide style={slideStyle}><img src={C_Historical} style={{...imageStyle}} onClick={()=>navigate('/historicalTravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-      Historical travel
+      <Link to={"/historicalTravel"} 
+      style={{
+        textDecoration:"none",
+        color:"white"
+      }}>Historical travel</Link>
       </div></SwiperSlide>
-        <SwiperSlide style={slideStyle}><img src={C_Solotravel} style={{...imageStyle}}/>
+        <SwiperSlide style={slideStyle}><img src={C_Solotravel} style={{...imageStyle}} onClick={()=>navigate('/soloTravel')}/>
         <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-        Solo travel
+        <Link to={"/soloTravel"} 
+      style={{
+        textDecoration:"none",
+        color:"white"
+      }}>Solo travel</Link>
         </div> </SwiperSlide>
-        <SwiperSlide style={slideStyle}><img src={C_Family} style={{...imageStyle}}/>
+        <SwiperSlide style={slideStyle}><img src={C_Family} style={{...imageStyle}} onClick={()=>navigate('/familyTravel')}/>
         <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-        Family travel
+        <Link to={"/familhTravel"} 
+      style={{
+        textDecoration:"none",
+        color:"white"
+      }}>Family travel</Link>
         </div></SwiperSlide>
-        <SwiperSlide style={slideStyle}><img src={C_Couples} style={{...imageStyle}}/>
+        <SwiperSlide style={slideStyle}><img src={C_Couples} style={{...imageStyle}} onClick={()=>navigate('/coupleTravel')}/>
         <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-        Couples travel
+        <Link to={"/coupleTravel"} 
+      style={{
+        textDecoration:"none",
+        color:"white"
+      }}>Couples travel</Link>
         </div></SwiperSlide>
-        <SwiperSlide style={slideStyle}><img src={C_Frds} style={{...imageStyle}}/>
+        <SwiperSlide style={slideStyle}><img src={C_Frds} style={{...imageStyle}} onClick={()=>navigate('/friendsTravel')}/>
         <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-        Friends travel
+        <Link to={"/friendsTravel"} 
+      style={{
+        textDecoration:"none",
+        color:"white"
+      }}>Friends travel</Link>
         </div></SwiperSlide>
         
       </Swiper>

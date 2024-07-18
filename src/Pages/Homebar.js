@@ -7,6 +7,7 @@ import SliderComponent from '../Components/Slider';
 import Latestpost from '../Components/Latestpost';
 import Popularpost from '../Components/Popularpost';
 import Gallery from '../Components/Gallery';
+import Header from '../Components/Header';
 function Homebar() {
   const backgroundStyle={
     backgroundImage:`url(${background})`,
@@ -58,10 +59,12 @@ function Homebar() {
     <>
 
   <div style={backgroundStyle}>
-      <Container>
-        <Navbar expand="lg">
-        <Navbar.Brand href="#home">Travel</Navbar.Brand>
-         <div className="mx-auto centered-form">
+  <Header/>
+
+      {/* <Container>
+        <Navbar expand="lg"> */}
+        {/* <Navbar.Brand href="#home">Travel</Navbar.Brand> */}
+         {/* <div className="mx-auto centered-form">
           <form className="d-flex justify-content-center">
             <input
               className="form-control"
@@ -71,8 +74,8 @@ function Homebar() {
               style={{width:'300px'}}
             />
           </form>
-        </div>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        </div> */}
+      {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">    
         <Nav className="ms-auto">
               <Nav.Link href="#home">Home</Nav.Link>
@@ -82,10 +85,11 @@ function Homebar() {
               <Nav.Link href="#contact">About Us</Nav.Link>
               <Nav.Link href="#contact">Contact Us</Nav.Link>
             </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-      </Container>
+            </Navbar.Collapse> */}
+        {/* </Navbar>
+      </Container> */}
       <div>
+       
         <h2 style={textStyle}>Someday, somewhere .</h2>
         <p>Together , we're mapping out a lifetime of memories !</p>
         <h3>Let's go ... </h3>
@@ -97,7 +101,7 @@ function Homebar() {
       </div>
       {/* ---------------------Latest Post -------------------------------------------- */}
       <div style={{padding:"0", marginTop: '70px' ,textAlign:'center',marginLeft:'190px',marginRight:'200px'}}>
-        <h1 style={{marginBottom:"70px"}}>My Blogs</h1>
+        <h1 style={{marginBottom:"70px"}}>Latest Blogs</h1>
       <Latestpost/>
       </div>
       {/* ---------------------Popular Post -------------------------------------------- */}

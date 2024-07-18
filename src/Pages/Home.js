@@ -8,7 +8,6 @@ export const Home = () => {
       <Homebar />
       <Container>
         <Navbar expand="lg" className="justify-content-center">
-      
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">

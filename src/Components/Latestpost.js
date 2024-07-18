@@ -54,7 +54,7 @@ export const Latestpost = () => {
         <Row xs={1} md={2} lg={5} className="g-5">
           {currentPosts.map((post) => (
             <Col key={post.id}>
-              <Card style={{ width: '12.3rem', height: '22rem' ,margin:"0",padding:'0'}}>
+              <Card style={{ width: '12.3rem', height: '18rem' ,margin:"0",padding:'0'}}>
                 <Card.Img variant="top" src={post.image} style={{ height: '12rem', objectFit: 'cover' }} />
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>

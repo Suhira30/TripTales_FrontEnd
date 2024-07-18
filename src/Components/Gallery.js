@@ -29,7 +29,7 @@ export   const Gallery = () => {
   };
   return (
 <>
-<div class="card-group"style={{padding:'0',margin:'0 0 0 10px',width:'100%'}}>
+<div class="card-group"style={{padding:'0',margin:'0 0 0 12px',width:'100%'}}>
   <Row xs={1} md={2} lg={3}>
   <div class="card" style={imgDivStyle}>
     <img src= {Gallery_1} class="card-img-top" style={imgStyle} alt="..."/>

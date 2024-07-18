@@ -52,8 +52,8 @@ export const Popularpost = () => {
       <div style={{ textAlign: 'center', }}>
         <Row className="g-4" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',padding:'0',margin:'0'}}>
           {currentPosts.map((post) => (
-            <Col key={post.id} style={{ width: '100%' }}>
-              <Card style={{ display: 'flex', flexDirection: 'row', width: '100%', height: '10rem' }}>
+            <Col key={post.id} style={{ width: '100%'}}>
+              <Card style={{ display: 'flex', flexDirection: 'row', width: '100%', height: '10rem' ,borderColor:"#eeeeee"}}>
                 <Card.Img variant="left" src={post.image} style={{ width: '50%', height: '100%', objectFit: 'cover'  }} />
                 <Card.Body style={{ width: '50%', padding: '1rem' }}>
                   <Card.Title>{post.title}</Card.Title>

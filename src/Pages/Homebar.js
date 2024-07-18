@@ -8,6 +8,8 @@ import Latestpost from '../Components/Latestpost';
 import Popularpost from '../Components/Popularpost';
 import Gallery from '../Components/Gallery';
 import Header from '../Components/Header';
+import SocialMedia from '../Components/SocialMedia';
+import Subscription from '../Components/Subscription';
 function Homebar() {
   const backgroundStyle={
     backgroundImage:`url(${background})`,
@@ -111,15 +113,24 @@ function Homebar() {
         <div style={{flex:3,padding:'0',margin:"0"}}>
         <Popularpost/>
         </div>
+      {/* ---------------------Fav Post -------------------------------------------- */}
         <div style={{flex:2,padding:'0',margin:"0"}}>
         <div style={{ flex: 1, backgroundColor: '#f0f0f0', marginBottom: '20px',marginTop:"25px" }}>
             Favourite Blog
           </div>
+      {/* ---------------------Gallery -------------------------------------------- */}
           <div style={{ flex: 1 }}>
             <Gallery/> 
           </div>
         <div>
-
+      {/* ---------------------Social Media -------------------------------------------- */}
+        <div>
+          <SocialMedia/>
+        </div>
+      {/* ---------------------Popular Post -------------------------------------------- */}
+        <div>
+          <Subscription/>
+        </div>
         </div>
         </div>
       </div>

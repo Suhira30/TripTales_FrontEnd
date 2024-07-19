@@ -14,14 +14,14 @@ const SocialMedia = () => {
       <Box
         height={200}
         width={"472px"}
-        my={2.5}
+       marginTop={"20px"}
         display="flex"
         flexDirection="column"
         gap={2}
         p={0.2}
         sx={{ border: '1px solid #eeeeee' }}
       >
-        <Typography sx={{ padding: "10px", fontWeight: "540" }}>Follow  me </Typography>
+        <Typography sx={{ paddingTop: "10px", fontWeight: "540" }}>Follow  me </Typography>
         <Divider sx={{ width: '100%' }} />
         <Box>
           <Grid container rowSpacing={1} columnSpacing={2}>

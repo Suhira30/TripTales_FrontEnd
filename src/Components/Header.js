@@ -37,8 +37,8 @@ const Header = () => {
           </Nav>
           <div className="text-end ms-3">
             <Button variant="outline-light" className="me-2">Login</Button>
-            <Button variant="warning">Sign-up</Button>
-          </div>
+            <Button style={{ backgroundColor: '#3AA6B9', borderColor: '#96EFFF' }}>Sign-up</Button>          
+            </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

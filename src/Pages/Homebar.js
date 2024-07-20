@@ -99,7 +99,7 @@ function Homebar() {
       </div>
       </div>
       {/* ---------------------Slider ------------------------------------------------ */}
-      <div style={{padding: '0px', margin: '70px 50px' }}>
+      <div id="sliderSection"style={{padding: '0px', margin: '70px 50px' }}>
       <SliderComponent/>
       </div>
       {/* ---------------------Latest Post -------------------------------------------- */}

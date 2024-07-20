@@ -1,12 +1,34 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import Header from '../../Components/Header';
-import background from "../../Images/background.jpg"
+import background from "../../Images/background.jpg";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+
+const itemData = [
+  // Dummy data for illustration, replace with your actual data
+  { id: 1, title: 'Lizard 1', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 1' },
+  { id: 2, title: 'Lizard 2', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 2' },
+  { id: 3, title: 'Lizard 3', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 3' },
+  { id: 4, title: 'Lizard 4', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 4' },
+  { id: 5, title: 'Lizard 5', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 5' },
+  { id: 6, title: 'Lizard 6', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 6' },
+  { id: 7, title: 'Lizard 7', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 7' },
+  { id: 8, title: 'Lizard 8', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 8' },
+  { id: 9, title: 'Lizard 9', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 9' },
+  { id: 10, title: 'Lizard 8', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 8' },
+  { id: 11, title: 'Lizard 9', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 9' },
+  { id: 12, title: 'Lizard 8', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 8' },
+  { id: 13, title: 'Lizard 9', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 9' },
+
+  // Add more items as needed
+];
 
 export default function FriendsTravel() {
   const backgroundStyle = {
@@ -23,15 +45,15 @@ export default function FriendsTravel() {
     padding: 0,
   };
 
-  // const [page, setPage] = React.useState(1);
-  // const itemsPerPage = 8;
-  // const pageCount = Math.ceil(itemData.length / itemsPerPage);
+  const [page, setPage] = React.useState(1);
+  const itemsPerPage = 12;
+  const pageCount = Math.ceil(itemData.length / itemsPerPage);
 
-  // const handleChange = (event, value) => {
-  //   setPage(value);
-  // };
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
 
-  // const paginatedItems = itemData.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+  const paginatedItems = itemData.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
   return (
     <>
@@ -39,100 +61,35 @@ export default function FriendsTravel() {
         <Header />
       </div>
       <div style={{ padding: "0", marginTop: '40px', textAlign: 'center', marginLeft: '190px', marginRight: '200px', height: '600px' }}>
-        <Box sx={{ width: "100%", height: 450 }}>
-          <ImageList variant="masonry" cols={4} gap={8}>
-            {itemData.map((item) => (
-              <ImageListItem key={item.img}>
-                <img
-                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  src={`${item.img}?w=248&fit=crop&auto=format`}
-                  alt={item.title}
-                  loading="lazy"
-                />
-                <ImageListItemBar position="below" title={item.author} />
-              </ImageListItem>
-            ))}
-          </ImageList>
+        <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={2.5}>
+          {paginatedItems.map(item => (
+            <Card key={item.id} sx={{ maxWidth: 400 }}>
+              <CardMedia
+                sx={{ height: 230 }}
+                image={item.image}
+                title={item.title}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {item.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {item.description}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small">Share</Button>
+                <Button size="small">Learn More</Button>
+              </CardActions>
+            </Card>
+          ))}
         </Box>
+        <div style={{ display:"flex",justifyContent:"center",textAlign: 'center', marginTop: '20px' ,}}>
+          <Stack spacing={2}>
+            <Pagination count={pageCount} page={page} onChange={handleChange} color="primary"/>
+          </Stack>
+        </div>
       </div>
-      {/* <div style={{ textAlign: 'center', marginTop: '20px' }}>
-        <Stack spacing={2}>
-          <Pagination count={pageCount} page={page} onChange={handleChange} />
-        </Stack>
-      </div> */}
     </>
   );
 }
-
-const itemData = [
-  {
-    img: 'https://images.unsplash.com/photo-1549388604-817d15aa0110',
-    title: 'Bed',
-    author: 'swabdesign',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
-    title: 'Books',
-    author: 'Pavel Nekoranec',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6',
-    title: 'Sink',
-    author: 'Charles Deluvio',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
-    title: 'Kitchen',
-    author: 'Christian Mackie',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1588436706487-9d55d73a39e3',
-    title: 'Blinds',
-    author: 'Darren Richardson',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1574180045827-681f8a1a9622',
-    title: 'Chairs',
-    author: 'Taylor Simpson',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1530731141654-5993c3016c77',
-    title: 'Laptop',
-    author: 'Ben Kolde',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1481277542470-605612bd2d61',
-    title: 'Doors',
-    author: 'Philipp Berndt',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7',
-    title: 'Coffee',
-    author: 'Jen P.',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee',
-    title: 'Storage',
-    author: 'Douglas Sheppard',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62',
-    title: 'Candle',
-    author: 'Fi Bell',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4',
-    title: 'Coffee table',
-    author: 'Hutomo Abrianto',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62',
-    title: 'Candle',
-    author: 'Fi Bell',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4',
-    title: 'Coffee table',
-    author: 'Hutomo Abrianto',
-  },
-];

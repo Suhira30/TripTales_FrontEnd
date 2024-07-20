@@ -29,7 +29,7 @@ const posts = [
 
 export const Latestpost = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 8;
+  const postsPerPage = 10;
 
   // Calculate the total number of pages
   const totalPages = Math.ceil(posts.length / postsPerPage);

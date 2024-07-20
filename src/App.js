@@ -12,6 +12,8 @@ import MountainTravel from './Pages/SliderPages/MountainTravel';
 import OceanTravel from './Pages/SliderPages/OceanTravel';
 import OldCity from './Pages/SliderPages/OldCity';
 import SoloTravel from './Pages/SliderPages/SoloTravel';
+import Gallery from './Pages/Galler';
+// import  Slider from "../src/Components/Slider"
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/friendsTravel" element={<FriendsTravel/>} />
         <Route path="/familyTravel" element={<Family/>} />
         <Route path="/coupleTravel" element={<CoupleTravel/>} />
+        <Route path="/gallery" element={<Gallery/>} />
+        {/* <Route path="/slider" element={<Slider/>} /> */}
         </Routes>
         </BrowserRouter>
     </div>

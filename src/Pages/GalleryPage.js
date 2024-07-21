@@ -8,7 +8,7 @@ import background from "../Images/background.jpg"
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
-export default function Gallery() {
+export default function GalleryPage() {
 //   const backgroundStyle = {
 //     backgroundImage: `url(${background})`,
 //     height: '100vh',

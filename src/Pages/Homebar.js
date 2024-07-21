@@ -11,6 +11,7 @@ import Header from '../Components/Header';
 import SocialMedia from '../Components/SocialMedia';
 import Subscription from '../Components/Subscription';
 import AboutMe from '../Components/AboutMe';
+import Footer from '../Components/Footer';
 function Homebar() {
   const backgroundStyle={
     backgroundImage:`url(${background})`,
@@ -140,6 +141,10 @@ function Homebar() {
       </div>
       </div>
       </div>
+      {/* ---------------------Foooter -------------------------------------------- */}
+      <div>
+        <Footer/>
+      </div> 
       
 </>
   );

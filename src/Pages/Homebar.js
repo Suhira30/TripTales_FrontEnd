@@ -12,6 +12,7 @@ import SocialMedia from '../Components/SocialMedia';
 import Subscription from '../Components/Subscription';
 import AboutMe from '../Components/AboutMe';
 import Footer from '../Components/Footer';
+import Box from '@mui/material/Box';
 function Homebar() {
   const backgroundStyle={
     backgroundImage:`url(${background})`,
@@ -133,7 +134,7 @@ function Homebar() {
       <div>
         <SocialMedia/>
       </div>
-      {/* ---------------------Popular Post -------------------------------------------- */}
+      {/* ---------------------About Me -------------------------------------------- */}
       <div>
         <AboutMe/>
       </div> 
@@ -141,6 +142,19 @@ function Homebar() {
       </div>
       </div>
       </div>
+      {/* ---------------------Popular Post -------------------------------------------- */}
+       <Box
+        sx={{
+          width: "100%",
+          height: "400px",
+          marginTop:"50px",
+          borderRadius: 1,
+          bgcolor: 'primary.main',
+          '&:hover': {
+            bgcolor: 'primary.dark',
+          },
+        }}
+      />
       {/* ---------------------Foooter -------------------------------------------- */}
       <div>
         <Footer/>

@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Button, Form, FormControl, Container } from 'react-bootstrap';
 import { Height } from '@mui/icons-material';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   const fullWidthNavbar = {
     width: '100%',
@@ -16,7 +16,7 @@ const Header = () => {
     <Navbar bg="dark" variant="dark" expand="lg" style={fullWidthNavbar}>
       <Container fluid style={{ paddingLeft: '30', paddingRight: '30' }}>
         <Navbar.Brand href="/">
-          Travel
+        TripTales
         </Navbar.Brand>
         <Form className="d-flex ms-3">
           <FormControl
@@ -36,9 +36,11 @@ const Header = () => {
             <Nav.Link href="/contact-us" className="px-2 text-white">Contact Us</Nav.Link>
           </Nav>
           <div className="text-end ms-3">
+            <Link to ="/login">
             <Button variant="outline-light" className="me-2">Login</Button>
+            </Link>
             <Button style={{ backgroundColor: '#3AA6B9', borderColor: '#96EFFF' }}>Sign-up</Button>          
-            </div>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

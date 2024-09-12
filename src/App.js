@@ -14,6 +14,8 @@ import OldCity from './Pages/SliderPages/OldCity';
 import SoloTravel from './Pages/SliderPages/SoloTravel';
 import GalleryPage from './Pages/GalleryPage';
 import LoginPage from './Pages/LoginPage';
+import SignUpPage from './Pages/SignUpPage';
+import IndividualBlog from './Pages/IndividualBlog'
 // import  Slider from "../src/Components/Slider"
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
         <Route path="/coupleTravel" element={<CoupleTravel/>} />
         <Route path="/gallery" element={<GalleryPage/>} />
         <Route path="/login" element={<LoginPage/>} />
+        <Route path="/signup" element={<SignUpPage/>} />
+        <Route path="/eachpost" element={<IndividualBlog/>} />
 
         {/* <Route path="/slider" element={<Slider/>} /> */}
         </Routes>

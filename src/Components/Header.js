@@ -39,7 +39,9 @@ const Header = () => {
             <Link to ="/login">
             <Button variant="outline-light" className="me-2">Login</Button>
             </Link>
-            <Button style={{ backgroundColor: '#3AA6B9', borderColor: '#96EFFF' }}>Sign-up</Button>          
+            <Link to ="/signup">
+            <Button style={{ backgroundColor: '#3AA6B9', borderColor: '#96EFFF' }}>Sign-up</Button>    
+            </Link>      
           </div>
         </Navbar.Collapse>
       </Container>

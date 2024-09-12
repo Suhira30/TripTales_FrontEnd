@@ -10,7 +10,7 @@ const signIn = async (provider, formData) => {
       const email = formData?.get('email');
       const password = formData?.get('password');
       alert(
-        `Loging in with "${provider.name}" and credentials: ${email}, ${password}`,
+        `Signing in with "${provider.name}" and credentials: ${email}, ${password}`,
       );
       // preview-start
       resolve({
@@ -23,12 +23,12 @@ const signIn = async (provider, formData) => {
   return promise;
 };
 
-export default function NotificationsSignInPageError() {
+export default function SignUpPage() {
   const theme = useTheme();
   return (
     // preview-start
     <AppProvider theme={theme}>
-      <SignInPage signIn={signIn} providers={providers}/>
+      <SignInPage signIn={signIn} providers={providers} />
     </AppProvider>
     // preview-end
   );

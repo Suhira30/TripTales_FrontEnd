@@ -13,7 +13,7 @@ import Subscription from '../Components/Subscription';
 import AboutMe from '../Components/AboutMe';
 import Footer from '../Components/Footer';
 import Box from '@mui/material/Box';
-import { TravelGuide } from '../Components/TravelGuide';
+import { Geographical } from '../Components/Geographical';
 import { Destination } from '../Components/Destination';
 function Homebar() {
   const backgroundStyle={
@@ -146,8 +146,8 @@ function Homebar() {
       </div>
       {/* ---------------------travel guide Post -------------------------------------------- */}
       <div style={{padding:"0", marginTop: '70px' ,textAlign:'center',marginLeft:'190px',marginRight:'200px'}}>
-        <h1 style={{marginBottom:"70px"}}>Travel Guide</h1>
-          <TravelGuide/>
+        <h1 style={{marginBottom:"70px"}}>Geographical </h1>
+          <Geographical/>
        </div>
       {/* ---------------------Desstination Post -------------------------------------------- */}
       {/* <div style={{padding:"0", marginTop: '70px' ,textAlign:'center',marginLeft:'190px',marginRight:'200px'}}>

@@ -10,7 +10,7 @@ import Header from '../../Components/Header';
 import background from "../../Images/background.jpg";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-
+import { Link } from 'react-router-dom';
 const itemData = [
   // Dummy data for illustration, replace with your actual data
   { id: 1, title: 'Lizard 1', image: '/static/images/cards/contemplative-reptile.jpg', description: 'Description 1' },
@@ -64,6 +64,8 @@ export default function Family() {
         <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={2.5}>
           {paginatedItems.map(item => (
             <Card key={item.id} sx={{ maxWidth: 400 }}>
+              {/* <Link to={`/eachpost/${post.id}`} style={{ textDecoration: 'none' }}> */}
+              <Link to={`/eachpost`} style={{ textDecoration: 'none' }}>
               <CardMedia
                 sx={{ height: 230 }}
                 image={item.image}
@@ -81,6 +83,7 @@ export default function Family() {
                 <Button size="small">Share</Button>
                 <Button size="small">Learn More</Button>
               </CardActions>
+              </Link>
             </Card>
           ))}
         </Box>

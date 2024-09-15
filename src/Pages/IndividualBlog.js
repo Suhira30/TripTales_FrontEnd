@@ -4,9 +4,13 @@ import background from '../Images/background.jpg'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import Divider from '@mui/material/Divider';
-import Chip from '@mui/material/Chip';
+import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import Reviews from '../Components/Reviews';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 const Root = styled('div')(({ theme }) => ({
     width: '100%',
     ...theme.typography.body2,
@@ -79,6 +83,26 @@ const paragraph={
     <Header/>
     <div style={backgroundStyle}>
     <div  style={floatingDivStyle}>
+      <Typography variant="h1" component="h2">
+        hello
+      </Typography>
+      <Typography variant="h5" component="h2">
+        Place:
+        Geographical Area :
+    <Stack direction="row" spacing={2}>
+      <Button variant="outlined" sx={{ color: 'black', borderColor: 'black' }}>
+        Solo trip 
+      </Button>
+      <Button variant="outlined" sx={{ color: 'black', borderColor: 'black' }}>
+        Family trip 
+      </Button>
+      <Button variant="outlined" sx={{ color: 'black', borderColor: 'black' }}>
+        Forest trip 
+      </Button>
+    </Stack>
+      </Typography>
+      <FavoriteIcon/>
+      <ChatBubbleIcon/>
     </div>
     </div>
     <div style={paragraph}>
@@ -97,10 +121,10 @@ const paragraph={
     </div>
     </div>
       
-      {/* ---------------------Foooter ------------------------------------------------------- */}
-      <div>
-        <Footer/>
-      </div> 
+{/* ---------------------Foooter ------------------------------------------------------- */}
+  <div>
+    <Footer/>
+  </div> 
       
 </>
   );

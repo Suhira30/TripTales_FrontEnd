@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { Link } from 'react-router-dom';
 import L_Eg from '../Images/L_Eg.jpg';
 import L_Eg2 from '../Images/L_Eg2.jpg';
 import L_Eg3 from '../Images/L_Eg3.jpg';
@@ -53,6 +54,8 @@ export const Popularpost = () => {
         <Row className="g-4" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',padding:'0',margin:'0'}}>
           {currentPosts.map((post) => (
             <Col key={post.id} style={{ width: '100%'}}>
+             {/* <Link to={`/eachpost/${post.id}`} style={{ textDecoration: 'none' }}> */}
+            <Link to={`/eachpost`} style={{ textDecoration: 'none' }}>
               <Card style={{ display: 'flex', flexDirection: 'row', width: '100%', height: '10rem' ,borderColor:"#eeeeee"}}>
                 <Card.Img variant="left" src={post.image} style={{ width: '50%', height: '100%', objectFit: 'cover'  }} />
                 <Card.Body style={{ width: '50%', padding: '1rem' }}>
@@ -60,6 +63,7 @@ export const Popularpost = () => {
                   <Card.Text>{post.content}</Card.Text>
                 </Card.Body>
               </Card>
+              </Link>
             </Col>
           ))}
         </Row>

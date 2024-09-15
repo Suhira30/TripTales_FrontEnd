@@ -87,7 +87,7 @@ function Reviews() {
                     />
                   </Box>
                 </ListItem>
-                <Divider variant="inset" component="li" />
+                {/* <Divider variant="inset" component="li" /> */}
               </React.Fragment>
             ))}
           </List>

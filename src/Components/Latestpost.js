@@ -9,6 +9,7 @@ import L_Eg3 from '../Images/L_Eg3.jpg';
 import L_Eg4 from '../Images/L_Eg4.jpg';
 import L_Eg5 from '../Images/L_Eg5.jpg';
 import L_Eg6 from '../Images/L_Eg6.jpg';
+import { Link } from 'react-router-dom';
 // Import other images...
 
 const posts = [
@@ -54,6 +55,8 @@ export const Latestpost = () => {
         <Row xs={1} md={2} lg={5} className="g-5">
           {currentPosts.map((post) => (
             <Col key={post.id}>
+              {/* <Link to={`/eachpost/${post.id}`} style={{ textDecoration: 'none' }}> */}
+              <Link to={`/eachpost`} style={{ textDecoration: 'none' }}>
               <Card style={{ width: '12.3rem', height: '18rem' ,margin:"0",padding:'0'}}>
                 <Card.Img variant="top" src={post.image} style={{ height: '12rem', objectFit: 'cover' }} />
                 <Card.Body>
@@ -61,6 +64,7 @@ export const Latestpost = () => {
                   <Card.Text>{post.content}</Card.Text>
                 </Card.Body>
               </Card>
+              </Link>
             </Col>
           ))}
         </Row>

@@ -20,7 +20,7 @@ const posts = [
   { id: 6, title: 'Post 6', content: 'Content for post 6...', image: guide6 },
 ];
 
-export const TravelGuide = () => {
+export const Geographical = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 10;
 

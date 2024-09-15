@@ -16,6 +16,10 @@ import GalleryPage from './Pages/GalleryPage';
 import LoginPage from './Pages/LoginPage';
 import SignUpPage from './Pages/SignUpPage';
 import IndividualBlog from './Pages/IndividualBlog'
+import Subscription from './Pages/Subscription';
+import Login from './Pages/LoginPage';
+import S from './Pages/S';
+
 // import  Slider from "../src/Components/Slider"
 
 function App() {
@@ -23,7 +27,8 @@ function App() {
     <div className="App">
         <BrowserRouter>
         <Routes>
-        <Route path="/"element={<Homebar/>} />
+        <Route path="/" element={<Login/>}/>
+        <Route path="/homebar"element={<Homebar/>} />
         <Route path="/roadTravel" element={<RoadTravel/>} />
         <Route path="/oceanTravel" element={<OceanTravel/>} />
         <Route path="/mountainTravel" element={<MountainTravel/>} />
@@ -38,6 +43,8 @@ function App() {
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/signup" element={<SignUpPage/>} />
         <Route path="/eachpost" element={<IndividualBlog/>} />
+        <Route path="/subscription"  element ={<Subscription/>}/>
+        <Route path="/s"  element ={<S/>}/>
 
         {/* <Route path="/slider" element={<Slider/>} /> */}
         </Routes>

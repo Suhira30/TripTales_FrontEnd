@@ -4,8 +4,8 @@ import Stripe from "react-stripe-checkout";
 import axios from "axios";
 function S() {
 async function handleToken(token) {
-console.log(token);
-await axios.post("http://localhost:8080/api/subscriptions/charge", "", {         headers: {
+// console.log(token);
+await axios.post("http://localhost:8080/api/v1/subscriptions/charge", "", {         headers: {
   token: token.id,
   amount: 500,
 },}).then(() => {

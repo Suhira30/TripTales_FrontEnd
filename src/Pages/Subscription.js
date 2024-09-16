@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useState} from 'react'
 import Box from '@mui/material/Box';
 import Item from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -29,27 +29,28 @@ import BASE_URL from '../Service/BaseUrl';
 
   
 export const Subscription = () => { 
-  const navigate = useNavigate(); 
-  const handleSubmit = (event) => {
+  const [cardNumber, setCardNumber] = useState('');
+  const [expiryDate, setExpiryDate] = useState('');
+  const [cvc, setCvc] = useState('');
+  const [cardHolder, setCardHolder] = useState('');
+  
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
     
-    axios.post(`${BASE_URL}/api/v1/auth/login/admin`, {
-      email: data.get('email'),
-      password: data.get('password'),
-  })
-      .then(response => {
-          // Store the token in local storage
-          localStorage.setItem('token', response.data.accessToken);
-          // Redirect to the dashboard
-          navigate('/homebar');
-      })
-      .catch(error => {
-          console.error('Login error:', error);
-          // Handle login error (e.g., display error message)
-          alert('Invalid email or password');
+    try {
+      const response = await axios.post("http://localhost:8080/api/v1/subscriptions/charge", {
+        token: cardNumber, // Ensure token is correctly mapped here
+        amount: 500, // Pass amount in cents
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
       });
-    };
+      alert('Payment successful');
+    } catch (error) {
+      alert('Payment failed');
+    }
+  };
 return (
   <>
   <Box sx={{width: '100vw',height: '100vh',display: 'grid',gridTemplateColumns: {xs: '1fr',   sm: '35% 65%',},}}>
@@ -101,19 +102,32 @@ return (
       >
         <FormControl sx={{ gridColumn: '1/-1' }}>
           <FormLabel>Card number</FormLabel>
-          <Input endDecorator={<CreditCardIcon />} />
+          <Input
+             value={cardNumber}
+             onChange={(e) => setCardNumber(e.target.value)}
+             endDecorator={<CreditCardIcon />} />
         </FormControl>
         <FormControl>
           <FormLabel>Expiry date</FormLabel>
-          <Input endDecorator={<CreditCardIcon />} />
+          <Input 
+           value={expiryDate}
+           onChange={(e) => setExpiryDate(e.target.value)}
+           endDecorator={<CreditCardIcon />} />
         </FormControl>
         <FormControl>
           <FormLabel>CVC/CVV</FormLabel>
-          <Input endDecorator={<InfoOutlined />} />
+          <Input
+          value={cvc}
+          onChange={(e) => setCvc(e.target.value)}
+          endDecorator={<InfoOutlined />} />
         </FormControl>
         <FormControl sx={{ gridColumn: '1/-1' }}>
           <FormLabel>Card holder name</FormLabel>
-          <Input placeholder="Enter cardholder's full name" />
+          <Input     
+          value={cardHolder}
+          onChange={(e) => setCardHolder(e.target.value)}
+          placeholder="Enter cardholder's full name" 
+          />
         </FormControl>
         <CardActions
         sx={{width: '670px',justifyContent: 'center', gap: 2,}}>
@@ -124,7 +138,7 @@ return (
         </Button>
         <Button variant="solid"  sx={{
           backgroundColor: '#ff5722',color: '#ffffff',width: '400px',
-          '&:hover': {backgroundColor: '#e64a19'}}}> Payment
+          '&:hover': {backgroundColor: '#e64a19'}}} type="submit" onClick={handleSubmit}> Payment
         </Button>
         </CardActions>
         </CardContent>

@@ -103,16 +103,17 @@ const imageStyle={
             spaceBetween: 40,
           },
         }}
-      ><SwiperSlide style={slideStyle}><img src={C_Road} style={{...imageStyle}} onClick={()=>navigate('/roadTravel')}/>
+      >
+      <SwiperSlide style={slideStyle}><img src={C_Road} style={{...imageStyle}} onClick={()=>navigate('/ROAD')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-      <Link to={"/roadTravel"} 
+      <Link to={"/ROAD"} 
       style={{
         textDecoration:"none",
         color:"white"
       }}>
       Road travel</Link>
       </div></SwiperSlide>
-      <SwiperSlide style={slideStyle}><img src={C_Ocean} style={{...imageStyle}} onClick={()=>navigate('/roadTravel')}/>
+      <SwiperSlide style={slideStyle}><img src={C_Ocean} style={{...imageStyle}} onClick={()=>navigate('/oceanTravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
       <Link to={"/oceanTravel"} 
       style={{
@@ -120,7 +121,7 @@ const imageStyle={
         color:"white"
       }}>Ocean travel</Link>
       </div></SwiperSlide>
-      <SwiperSlide style={slideStyle}><img src={C_Mountain} style={{...imageStyle}} onClick={()=>navigate('/oceanTravel')}/>
+      <SwiperSlide style={slideStyle}><img src={C_Mountain} style={{...imageStyle}} onClick={()=>navigate('/mountaintravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
       <Link to={"/mountaintravel"} 
       style={{

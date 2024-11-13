@@ -8,7 +8,7 @@ import guide3 from '../Images/Guide3.jpeg';
 import guide4 from '../Images/Guide4.jpeg';
 import guide5 from '../Images/Guide5.jpeg';
 import guide6 from '../Images/Guide6.jpeg';
-
+import { Link } from 'react-router-dom';
 
 const posts = [
 
@@ -48,11 +48,14 @@ export const Geographical = () => {
           {currentPosts.map((post) => (
             <Col key={post.id}>
               <Card style={{ width: '12.3rem', height: '18rem' ,margin:"0",padding:'0'}}>
+                  {/* <Link to={`/eachpost/${post.id}`} style={{ textDecoration: 'none' }}> */}
+                <Link to={`/geographical`} style={{ textDecoration: 'none' }}>
                 <Card.Img variant="top" src={post.image} style={{ height: '12rem', objectFit: 'cover' }} />
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>
                   <Card.Text>{post.content}</Card.Text>
                 </Card.Body>
+                </Link>
               </Card>
             </Col>
           ))}

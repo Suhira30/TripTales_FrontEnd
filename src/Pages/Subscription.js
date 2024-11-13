@@ -25,7 +25,7 @@ import InfoOutlined from '@mui/icons-material/InfoOutlined';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import PricingCards from '../Components/PricingCards';
 import axios from 'axios';
-import BASE_URL from '../Service/BaseUrl';
+import BASE_URL from '../Pages/Service/BaseUrl';
 
   
 export const Subscription = () => { 

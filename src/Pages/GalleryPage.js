@@ -8,49 +8,6 @@ import background from "../Images/background.jpg"
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
-export default function GalleryPage() {
-//   const backgroundStyle = {
-//     backgroundImage: `url(${background})`,
-//     height: '100vh',
-//     backgroundSize: 'cover',
-//     backgroundPosition: 'center',
-//     backgroundRepeat: 'no-repeat',
-//     display: 'flex',
-//     flexDirection: 'column',
-//     alignItems: 'center',
-//     overflow: 'hidden',
-//     margin: 0,
-//     padding: 0,
-//   };
-
-
-  return (
-    <>
-      <div >
-        <Header />
-      </div>
-      <div style={{ padding: "0", marginTop: '40px', textAlign: 'center', marginLeft: '190px', marginRight: '200px', height: '600px' }}>
-        <Box sx={{ width: "100%", height: 450 }}>
-          <ImageList variant="masonry" cols={4} gap={8}>
-            {itemData.map((item) => (
-              <ImageListItem key={item.img}>
-                <img
-                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  src={`${item.img}?w=248&fit=crop&auto=format`}
-                  alt={item.title}
-                  loading="lazy"
-                />
-                <ImageListItemBar position="below" title={item.author} />
-              </ImageListItem>
-            ))}
-          </ImageList>
-        </Box>
-      </div>
-     
-    </>
-  );
-}
-
 const itemData = [
   {
     img: 'https://images.unsplash.com/photo-1549388604-817d15aa0110',
@@ -123,3 +80,46 @@ const itemData = [
     author: 'Hutomo Abrianto',
   },
 ];
+
+export default function GalleryPage() {
+//   const backgroundStyle = {
+//     backgroundImage: `url(${background})`,
+//     height: '100vh',
+//     backgroundSize: 'cover',
+//     backgroundPosition: 'center',
+//     backgroundRepeat: 'no-repeat',
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center',
+//     overflow: 'hidden',
+//     margin: 0,
+//     padding: 0,
+//   };
+
+
+  return (
+    <>
+      <div >
+        <Header />
+      </div>
+      <div style={{ padding: "0", marginTop: '40px', textAlign: 'center', marginLeft: '190px', marginRight: '200px', height: '600px' }}>
+        <Box sx={{ width: "100%", height: 450 }}>
+          <ImageList variant="masonry" cols={4} gap={8}>
+            {itemData.map((item) => (
+              <ImageListItem key={item.img}>
+                <img
+                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  src={`${item.img}?w=248&fit=crop&auto=format`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+                <ImageListItemBar position="below" title={item.author} />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </Box>
+      </div>
+     
+    </>
+  );
+}

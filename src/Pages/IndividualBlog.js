@@ -11,6 +11,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { useEffect ,useState} from 'react';
+import PostService from './Service/PostService';
+import { useParams } from 'react-router-dom';
+
 const Root = styled('div')(({ theme }) => ({
     width: '100%',
     ...theme.typography.body2,
@@ -33,6 +37,22 @@ function Homebar() {
 //     margin: 0,
 //     padding: 0
 //   }
+const [data, setData] = useState([]);
+const{postId} =useParams();
+const fetchData=async(postId)=>{
+  try{
+    const eachPostData=await PostService.fetchEachPostData(postId);
+    setData(eachPostData);
+  }
+  catch(error){
+    console.log('error fetching data ', error);
+  }
+};
+
+useEffect(()=>{
+  fetchData(postId);
+},[postId]);
+ 
 const imageStyle = {
     maxWidth: '100%',        
     height: 'auto',          

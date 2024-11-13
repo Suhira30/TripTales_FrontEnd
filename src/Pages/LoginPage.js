@@ -15,7 +15,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 // import applogo from '../Img/app-logo.png';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import BASE_URL from '../Service/BaseUrl';
+import BASE_URL from '../Pages/Service/BaseUrl';
 // function Copyright(props) {
 //   return (
 //   <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -33,7 +33,7 @@ import BASE_URL from '../Service/BaseUrl';
     event.preventDefault();
     const data = new FormData(event.currentTarget);
   
-    axios.post('/api/login/admin', {
+    axios.post('api/v1/auth/login/follower', {
       email: data.get('email'),
       password: data.get('password'),
     })
@@ -55,7 +55,7 @@ export const LoginPage = () => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     
-    axios.post(`${BASE_URL}/api/v1/auth/login/admin`, {
+    axios.post(`${BASE_URL}/api/v1/auth/login/follower`, {
       email: data.get('email'),
       password: data.get('password'),
   })
@@ -95,7 +95,7 @@ return (
     </Box>
   <CssBaseline />
     <Box sx={{my: 28,mx: 4,display: 'flex',flexDirection: 'column',alignItems: 'center',}}>
-    <Typography component="h1" variant="h4" >Labor <span style={{ color: '#ec762f' }}>Link</span></Typography>
+    <Typography component="h1" variant="h4" >Trip <span style={{ color: '#ec762f' }}>Tales</span></Typography>
     <Typography component="h1" variant="h6"> Log in to your Account</Typography>
     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 ,width:"500px"}}>
     <Typography variant="subtitle1" gutterBottom style={{ marginBottom: '-15px' }}>Email Address</Typography>

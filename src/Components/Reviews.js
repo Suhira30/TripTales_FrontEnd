@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
@@ -10,43 +10,43 @@ import Pagination from '@mui/material/Pagination';
 import ReviewRating from '../Components/ReviewRating'; 
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
+import ReviewService from '../Pages/Service/ReviewService';
+// // Dummy review data
+// const dummyReviews = [
+//   {
+//     id: 1,
+//     customerName: 'John Doe',
+//     customerEmail: 'john.doe@example.com',
+//     avatar: 'https://via.placeholder.com/50',
+//     // rating: 4,
+//     date: '2024-09-01',
+//     description: 'Excellent service, very professional!',
+//   },
+//   {
+//     id: 2,
+//     customerName: 'Jane Doe',
+//     customerEmail: 'jane.doe@example.com',
+//     avatar: 'https://via.placeholder.com/50',
+//     // rating: 5,
+//     date: '2024-09-01',
+//     description: 'Outstanding work, highly recommended!',
+//   },
+//   {
+//     id: 3,
+//     customerName: 'Mike Johnson',
+//     customerEmail: 'mike.johnson@example.com',
+//     avatar: 'https://via.placeholder.com/50',
+//     // rating: 3,
+//     date: '2024-09-01',
+//     description: 'Good job, but there is room for improvement.',
+//   },
+//   // Add more dummy reviews as needed
+// ];
 
-// Dummy review data
-const dummyReviews = [
-  {
-    id: 1,
-    customerName: 'John Doe',
-    customerEmail: 'john.doe@example.com',
-    avatar: 'https://via.placeholder.com/50',
-    // rating: 4,
-    date: '2024-09-01',
-    description: 'Excellent service, very professional!',
-  },
-  {
-    id: 2,
-    customerName: 'Jane Doe',
-    customerEmail: 'jane.doe@example.com',
-    avatar: 'https://via.placeholder.com/50',
-    // rating: 5,
-    date: '2024-09-01',
-    description: 'Outstanding work, highly recommended!',
-  },
-  {
-    id: 3,
-    customerName: 'Mike Johnson',
-    customerEmail: 'mike.johnson@example.com',
-    avatar: 'https://via.placeholder.com/50',
-    // rating: 3,
-    date: '2024-09-01',
-    description: 'Good job, but there is room for improvement.',
-  },
-  // Add more dummy reviews as needed
-];
-
-function Reviews() {
-  const [listData, setListData] = useState(dummyReviews);
+function Reviews({postId}) {
+  const [listData, setListData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 2; // Adjust this as needed
+  const itemsPerPage = 10; // Adjust this as needed
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -57,6 +57,20 @@ function Reviews() {
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
   };
+  const fetchData=async(postId)=>{
+    try{
+      const eachPostReview=await ReviewService.fetchReview(postId);
+      setListData(eachPostReview);
+    }
+    catch(error){
+      console.log('error to fetch review:',error);
+    }
+  }
+  useEffect(()=>{
+    fetchData(postId);
+  },[postId]);
+
+  
 
   return (
     <>
@@ -73,7 +87,7 @@ function Reviews() {
                     <ListItemText
                       primary={
                         <Typography sx={{ fontWeight: 'bold' }}>
-                          {item.customerEmail}
+                          {item.reviewBy}
                         </Typography>
                       }
                       secondary={

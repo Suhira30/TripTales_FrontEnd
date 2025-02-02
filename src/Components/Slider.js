@@ -110,52 +110,59 @@ const imageStyle={
       style={{
         textDecoration:"none",
         color:"white"
-      }}>
-      Road travel</Link>
-      </div></SwiperSlide>
+      }}>Road travel</Link>
+      </div>
+      </SwiperSlide>
+
       <SwiperSlide style={slideStyle}><img src={C_Ocean} style={{...imageStyle}} onClick={()=>navigate('/oceanTravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-      <Link to={"/oceanTravel"} 
+      <Link to={"/OCEAN"} 
       style={{
         textDecoration:"none",
         color:"white"
       }}>Ocean travel</Link>
-      </div></SwiperSlide>
+      </div>
+      </SwiperSlide>
+
       <SwiperSlide style={slideStyle}><img src={C_Mountain} style={{...imageStyle}} onClick={()=>navigate('/mountaintravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-      <Link to={"/mountaintravel"} 
+      <Link to={"/MOUNTAIN"} 
       style={{
         textDecoration:"none",
         color:"white"
       }}>Mountain travel</Link>
-      </div></SwiperSlide>
+      </div>
+      </SwiperSlide>
+
       <SwiperSlide style={slideStyle}><img src={C_Jungle} style={{...imageStyle}} onClick={()=>navigate('/jungleTravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-      <Link to={"/jungleTravel"} 
+      <Link to={"/JUNGLE"} 
       style={{
         textDecoration:"none",
         color:"white"
       }}>Jungle travel</Link>
       </div></SwiperSlide>
-      <SwiperSlide style={slideStyle}><img src={C_Oldcity} style={{...imageStyle}} onClick={()=>navigate('/oldCityTravel')}/>
+
+      {/* <SwiperSlide style={slideStyle}><img src={C_Oldcity} style={{...imageStyle}} onClick={()=>navigate('/oldCityTravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
       <Link to={"/oldCityTravel"} 
       style={{
         textDecoration:"none",
         color:"white"
       }}>Old City travel</Link>
-      </div></SwiperSlide>
-      <SwiperSlide style={slideStyle}><img src={C_Historical} style={{...imageStyle}} onClick={()=>navigate('/historicalTravel')}/>
+      </div></SwiperSlide> */}
+      {/* <SwiperSlide style={slideStyle}><img src={C_Historical} style={{...imageStyle}} onClick={()=>navigate('/historicalTravel')}/>
       <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
       <Link to={"/historicalTravel"} 
       style={{
         textDecoration:"none",
         color:"white"
       }}>Historical travel</Link>
-      </div></SwiperSlide>
+      </div></SwiperSlide> */}
+
         <SwiperSlide style={slideStyle}><img src={C_Solotravel} style={{...imageStyle}} onClick={()=>navigate('/soloTravel')}/>
         <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-        <Link to={"/soloTravel"} 
+        <Link to={"/SOLO"} 
       style={{
         textDecoration:"none",
         color:"white"
@@ -163,28 +170,32 @@ const imageStyle={
         </div> </SwiperSlide>
         <SwiperSlide style={slideStyle}><img src={C_Family} style={{...imageStyle}} onClick={()=>navigate('/familyTravel')}/>
         <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-        <Link to={"/familhTravel"} 
+        <Link to={"/FAMILY"} 
       style={{
         textDecoration:"none",
         color:"white"
       }}>Family travel</Link>
-        </div></SwiperSlide>
-        <SwiperSlide style={slideStyle}><img src={C_Couples} style={{...imageStyle}} onClick={()=>navigate('/coupleTravel')}/>
+        </div>
+        </SwiperSlide>
+
+        {/* <SwiperSlide style={slideStyle}><img src={C_Couples} style={{...imageStyle}} onClick={()=>navigate('/coupleTravel')}/>
         <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
         <Link to={"/coupleTravel"} 
       style={{
         textDecoration:"none",
         color:"white"
       }}>Couples travel</Link>
-        </div></SwiperSlide>
+        </div></SwiperSlide> */}
+
         <SwiperSlide style={slideStyle}><img src={C_Frds} style={{...imageStyle}} onClick={()=>navigate('/friendsTravel')}/>
         <div style={{ position: 'absolute',  textAlign: 'center', background: 'rgba(0, 0, 0, 0.3)', color: '#fff', padding: '8px' }}>
-        <Link to={"/friendsTravel"} 
+        <Link to={"/FRIENDS"} 
       style={{
         textDecoration:"none",
         color:"white"
       }}>Friends travel</Link>
-        </div></SwiperSlide>
+        </div>
+        </SwiperSlide>
         
       </Swiper>
     </div>

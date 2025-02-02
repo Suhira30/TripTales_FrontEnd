@@ -21,25 +21,23 @@ import Login from './Pages/LoginPage';
 import Geographical from "./Pages/GeographicalPage";
 import S from './Pages/S';
 
-// import  Slider from "../src/Components/Slider"
-
 function App() {
   return (
     <div className="App">
         <BrowserRouter>
         <Routes>
         <Route path="/" element={<Login/>}/>
-        <Route path="/homebar"element={<Homebar/>} />
+        <Route path="/homebar" element={<Homebar/>} />
         <Route path="/:category" element={<RoadTravel/>} />
-        <Route path="/oceanTravel" element={<OceanTravel/>} />
-        <Route path="/mountainTravel" element={<MountainTravel/>} />
-        <Route path="/oldCityTravel" element={<OldCity/>} />
-        <Route path="/historicalTravel" element={<Historical/>} />
-        <Route path="/soloTravel" element={<SoloTravel/>} />
-        <Route path="/jungleTravel" element={<JungleTravel/>} />
-        <Route path="/friendsTravel" element={<FriendsTravel/>} />
-        <Route path="/familyTravel" element={<Family/>} />
-        <Route path="/coupleTravel" element={<CoupleTravel/>} />
+        <Route path="/:category" element={<OceanTravel/>} />
+        <Route path="/:category" element={<MountainTravel/>} />
+        {/* <Route path="/:category" element={<OldCity/>} />
+        <Route path="/:category" element={<Historical/>} /> */}
+        <Route path="/:category" element={<SoloTravel/>} />
+        <Route path="/:category" element={<JungleTravel/>} />
+        <Route path="/:category" element={<FriendsTravel/>} />
+        <Route path="/:category" element={<Family/>} />
+        {/* <Route path="/:category" element={<CoupleTravel/>} /> */}
         <Route path="/gallery" element={<GalleryPage/>} />
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/signup" element={<SignUpPage/>} />
